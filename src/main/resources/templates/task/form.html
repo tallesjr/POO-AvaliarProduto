@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1 class= "center" >Avaliação de compra de produtos</h1>
+
+    <div class="content">
+        <form action="" method="post" th:object="${task}">
+            <label class= "center" for="title">Nome do produto comprado:</label>
+            <input type="text" th:field="*{title}">
+            <span th:errors="*{title}"></span>
+            
+            <label class= "center" for="description">Avaliação do produto:</label>
+            <textarea th:field="*{description}"></textarea>
+            <span th:errors="*{description}"></span>
+            
+            <label class= "center" for="score">Nota para o produto (0 a 10):</label>
+            <input type="number" th:field="*{score}" min="0" max="10">
+            <span th:errors="*{score}"></span>
+
+            <div class="actions">
+                <a href="/avaliar" class="btn">cancelar</a>
+                <button class="btn">salvar</button>
+            </div>
+    
+        </form>
+
+    </div>
+
+
+</body>
+</html>
